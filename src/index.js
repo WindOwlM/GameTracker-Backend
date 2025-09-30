@@ -1,11 +1,11 @@
-const dotenv = require("dotenv");
-dotenv.config();
-const connectDB = require("./config/db");
+const dotenv = require("dotenv")
+dotenv.config()
+const connectDB = require("./config/db")
 const app = require("./app")
 
-connectDB();
+connectDB()
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+  console.log(`Servidor corriendo en http://localhost:${PORT}`)
 });

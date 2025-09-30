@@ -8,6 +8,10 @@ const userSchema = new mongoose.Schema({
     games: {type: Array},
     favorites: {type: Array},
     ratings: {type: Array},
-    bio: {type: String},
+    bio: {type: String, default: "empty"},
     socialLinks: {type:Array}
-}, {collection: "Games"})
+}, {collection: "Users"})
+
+const User = mongoose.model("User",userSchema)
+
+module.exports = User

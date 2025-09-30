@@ -17,3 +17,7 @@ const gameSchema = new mongoose.Schema({
     tags: {type: Array},
     achievements: {type: Int}
 }, {collection: "Games"})
+
+const Game = mongoose.model("Game",gameSchema)
+
+module.exports = Game
