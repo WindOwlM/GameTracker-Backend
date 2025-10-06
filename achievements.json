@@ -1,0 +1,77 @@
+{
+  "count": 40,
+  "next": "https://api.rawg.io/api/games/28/achievements?key=8180663599df4c4097046eb9adfb71aa&page=2",
+  "previous": null,
+  "results": [
+    {
+      "id": 1129606,
+      "name": "Legend of the West",
+      "description": "Legend of the West",
+      "image": "https://media.rawg.io/media/achievements/028/028cd1f5aba4b6bd601d3c9c47690ccf.jpg",
+      "percent": "0.51"
+    },
+    {
+      "id": 1129619,
+      "name": "Gold Rush",
+      "description": "Earn 70 Gold Medals in Story missions.",
+      "image": "https://media.rawg.io/media/achievements/a05/a055dea5f7b6a22a10af327fdf59d886.jpg",
+      "percent": "1.42"
+    },
+    {
+      "id": 1129639,
+      "name": "Grin and Bear it",
+      "description": "Survive 18 bear attacks and kill the bear each time in Story Mode.",
+      "image": "https://media.rawg.io/media/achievements/0a1/0a16a2a2182574b11517735db04a8315.jpg",
+      "percent": "1.92"
+    },
+    {
+      "id": 1129647,
+      "name": "Horses for Courses",
+      "description": "Red Dead Online: Concurrently own 5 horses.",
+      "image": "https://media.rawg.io/media/achievements/84f/84fd1b3019d6307b130c96458b3802c3.jpg",
+      "percent": "1.96"
+    },
+    {
+      "id": 1129635,
+      "name": "Skin Deep",
+      "description": "Skin every species of animal in Story Mode.",
+      "image": "https://media.rawg.io/media/achievements/6db/6db95bd923488c150fe4493a056053b1.jpg",
+      "percent": "2.04"
+    },
+    {
+      "id": 1129636,
+      "name": "Zoologist",
+      "description": "Study every animal across all states in Story Mode.",
+      "image": "https://media.rawg.io/media/achievements/0dd/0dd32256def5e6ba22b39842a178a986.jpg",
+      "percent": "2.05"
+    },
+    {
+      "id": 1129618,
+      "name": "Best in the West",
+      "description": "Attain 100% completion.",
+      "image": "https://media.rawg.io/media/achievements/422/422bfaf2d1127142d92e5e7051fdf08f.jpg",
+      "percent": "2.14"
+    },
+    {
+      "id": 1129652,
+      "name": "Non-Regulation",
+      "description": "Red Dead Online: Craft 25 pieces of ammunition.",
+      "image": "https://media.rawg.io/media/achievements/bb2/bb281aa4c2abaa4ee5fdd0a019798cc5.jpg",
+      "percent": "2.36"
+    },
+    {
+      "id": 1129646,
+      "name": "The Real Deal",
+      "description": "Red Dead Online: Achieve MVP 3 times (in a round with at least 4 players).",
+      "image": "https://media.rawg.io/media/achievements/7f4/7f4676e772871a49d9e3fd4faf6f6053.jpg",
+      "percent": "3.14"
+    },
+    {
+      "id": 1129649,
+      "name": "Notorious",
+      "description": "Red Dead Online: Reach Rank 50.",
+      "image": "https://media.rawg.io/media/achievements/192/192cbce99f06280919623db22391656a.jpg",
+      "percent": "4.04"
+    }
+  ]
+}
