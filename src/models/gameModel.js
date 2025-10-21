@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 
 const gameSchema = new mongoose.Schema({
-    rawgId: {type: BigInt, required: true},
     title: {type: String,required: true},
     platforms: {type: Array},
     released: {type: Date},
@@ -11,13 +10,12 @@ const gameSchema = new mongoose.Schema({
     stores: {type:Array},
     users: {type: Array},
     avgRating: {type: String},
-    ratingCount: {type: BigInt},
+    ratingCount: {type: Number, default: 0},
     developer: {type: String},
     publisher: {type: String},
     tags: {type: Array},
-    totalAchievements: {type: BigInt},
-    achievementsCompleted: {type: BigInt, default: 0},
-    screenshots: {type: Array}
+    totalAchievements: {type: Number, default: 0},
+    achievementsCompleted: {type: Number, default: 0},
 }, {collection: "Games"})
 
 const Game = mongoose.model("Game",gameSchema)

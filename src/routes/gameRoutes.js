@@ -5,6 +5,6 @@ const {
 } = require("../controllers/gameController")
 
 
-router.get("/",createGame)
+router.post("/",createGame)
 
 module.exports = router
