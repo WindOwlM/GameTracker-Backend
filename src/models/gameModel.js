@@ -14,7 +14,6 @@ const gameSchema = new mongoose.Schema({
     publisher: {type: String},
     tags: [String],
     totalAchievements: {type: Number, default: 0},
-    achievementsCompleted: {type: Number, default: 0},
 }, {collection: "Games"})
 
 const Game = mongoose.model("Game",gameSchema)
