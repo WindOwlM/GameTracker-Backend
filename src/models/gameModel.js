@@ -3,11 +3,11 @@ const mongoose = require('mongoose')
 const gameSchema = new mongoose.Schema({
     title: {type: String,required: true},
     platforms: [String],
-    released: {type: String},
+    released: {type: Date},
     coverImage: {type:String},
     createdAt: {type: Date, default: Date.now},
     genres: [String],
-    users: {type: mongoose.Schema.Types.ObjectId, ref: "User"},
+    users: [{type: mongoose.Schema.Types.ObjectId, ref: "User"}],
     avgRating: {type: Number, default: 0},
     ratingCount: {type: Number, default: 0},
     developer: {type: String},

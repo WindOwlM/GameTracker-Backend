@@ -1,12 +1,38 @@
 const gameProgress = require("../models/gameProgressModel")
+const Game = require("../models/gameModel")
+const User = require("../models/userModel")
 
-const createProgress = async (req, res) =>{
+const addGameToLibrary = async (req, res) => {
     try {
-        const Progress = new gameProgress(req.body)
-        await Progress.save()
-        res.status(201).json(Progress)
+        const { user_id, game_id } = req.body
+
+        const user = await User.findById(user_id)
+        const game = await Game.findById(game_id)
+
+        if (!user) return res.status(404).json({ error: 'Usuario no encontrado' })
+        if (!game) return res.status(404).json({ error: 'Juego no encontrado' })
+
+        const exists = await gameProgress.findOne({ user_id: user_id, game_id: game_id })
+        if (exists) return res.status(200).json({ message: 'El juego ya está en la biblioteca', exists })
+
+        // 3️⃣ Crear nuevo registro de progreso
+        const newProgress = new gameProgress({
+        user_id: user_id,
+        game_id: game_id,
+        progress: 0,
+        achievementsUnlocked: 0,
+        totalAchievements: game.totalAchievements || 0
+        })
+
+        await newProgress.save()
+
+        // 4️⃣ Responder con el registro creado
+        res.status(201).json({
+        message: 'Juego agregado correctamente a la biblioteca',
+        progress: newProgress
+        })
     } catch (error) {
-        res.status(400).json({ message: error.message });
+        res.status(500).json({ error: error.message })
     }
 }
 
@@ -26,7 +52,8 @@ const searchProgress = async (req, res) =>{
     }
 }
 
+
 module.exports = {
-    createProgress,
+    addGameToLibrary,
     searchProgress
 }

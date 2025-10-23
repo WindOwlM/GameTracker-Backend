@@ -7,7 +7,6 @@ const userGameProgressSchema = new mongoose.Schema({
     totalAchievements: { type: Number, default: 0 },
     hoursPlayed: { type: Number, default: 0 },
     lastPlayed: { type: Date, default: Date.now },
-    lastAchievementDate: { type: Date },
     progress: { type: Number, default: 0 }
 }, { collection: "UserGameProgress" });
 

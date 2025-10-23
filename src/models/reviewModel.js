@@ -7,6 +7,8 @@ const reviewSchema = new mongoose.Schema({
     review: String
 }, { timestamps: true },{collection: "Reviews"});
 
+reviewSchema.index({ user_id: 1, game_id: 1 }, { unique: true });
+
 const Review = mongoose.model("Review",reviewSchema)
 
 module.exports = Review

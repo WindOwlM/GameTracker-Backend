@@ -1,12 +1,12 @@
 const express = require("express")
 const router = express.Router()
 const {
-    createProgress,
+    addGameToLibrary,
     searchProgress
 } = require("../controllers/gameProgressController")
 
 
-router.post("/",createProgress)
+router.post("/",addGameToLibrary)
 router.get("/:id",searchProgress)
 
 module.exports = router
