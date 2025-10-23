@@ -2,6 +2,9 @@ const Game = require("../models/gameModel")
 
 const createGame = async (req,res) => {
     try{
+
+        const {title} = req.body
+
         const newGame = new Game(req.body)
         await newGame.save()
         res.status(201).json(newGame)
