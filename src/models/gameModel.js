@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const gameSchema = new mongoose.Schema({
     title: {type: String,required: true},
-    platforms: [String],
+    platform: String,
     released: {type: Date},
     coverImage: {type:String},
     createdAt: {type: Date, default: Date.now},
@@ -14,6 +14,7 @@ const gameSchema = new mongoose.Schema({
     publisher: {type: String},
     tags: [String],
     totalAchievements: {type: Number, default: 0},
+    description: {type: String, default: "null"}
 }, {collection: "Games"})
 
 const Game = mongoose.model("Game",gameSchema)
