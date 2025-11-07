@@ -15,7 +15,7 @@ app.use("/review", reviewRoutes)
 app.use("/progress", gameProgressRoutes)
 
 app.get("/", (req, res) => {
-  res.send("🚀 API funcionando")
+  res.send("API funcionando")
 });
 
 module.exports = app

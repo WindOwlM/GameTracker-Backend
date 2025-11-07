@@ -15,7 +15,6 @@ const addGameToLibrary = async (req, res) => {
         const exists = await gameProgress.findOne({ user_id: user_id, game_id: game_id })
         if (exists) return res.status(200).json({ message: 'El juego ya está en la biblioteca', exists })
 
-        // 3️⃣ Crear nuevo registro de progreso
         const newProgress = new gameProgress({
         user_id: user_id,
         game_id: game_id,
@@ -26,7 +25,6 @@ const addGameToLibrary = async (req, res) => {
 
         await newProgress.save()
 
-        // 4️⃣ Responder con el registro creado
         res.status(201).json({
         message: 'Juego agregado correctamente a la biblioteca',
         progress: newProgress
