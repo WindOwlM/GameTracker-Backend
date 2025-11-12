@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
+const Review = require('./reviewModel')
 
 const gameSchema = new mongoose.Schema({
     title: {type: String,required: true},
     platform: String,
-    released: {type: Date},
+    released: {type: Number},
     coverImage: {type:String},
     createdAt: {type: Date, default: Date.now},
     genres: [String],
@@ -17,6 +18,14 @@ const gameSchema = new mongoose.Schema({
     description: {type: String, default: "null"},
     completed:Boolean
 }, {collection: "Games"})
+
+gameSchema.pre('findOneAndDelete', async function (next) {
+    const game = await this.model.findOne(this.getFilter());
+    if (game) {
+        await Review.deleteMany({ game_id: game._id });
+    }
+    next();
+});
 
 const Game = mongoose.model("Game",gameSchema)
 
