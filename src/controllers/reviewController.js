@@ -16,7 +16,8 @@ const createReview = async (req,res) =>{
 const searchReview = async (req,res) =>{
     try {
         const { id } = req.params
-        const review = await Review.findById(id)
+        const review = await Review.find({user_id:id})
+        .collection("games")
         .populate("user_id", "username")
         .populate("game_id", "title")
 
@@ -31,8 +32,8 @@ const searchReview = async (req,res) =>{
 
 const searchAllReviews = async (req,res) =>{
     try {
-        const { title } = req.params
-        const game = await Game.findOne({title: title}).select("_id")
+        const { id } = req.params
+        const game = await Game.findById({_id: id}).select("_id")
 
         if (!game) return res.status(404).json({message: "Juego no encontrado"})
         

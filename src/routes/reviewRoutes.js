@@ -11,7 +11,7 @@ const {
 
 router.post("/",createReview)
 router.get("/:id",searchReview)
-router.get("/game/:title",searchAllReviews)
+router.get("/game/:id",searchAllReviews)
 router.patch("/:game_id",updateReview)
 router.delete("/:review_id",deleteReview)
 
