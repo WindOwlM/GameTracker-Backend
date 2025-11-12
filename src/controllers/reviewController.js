@@ -53,14 +53,13 @@ const searchAllReviews = async (req,res) =>{
 const updateReview = async (req,res) =>{
     try {
         const { game_id } = req.params
-        const {user_id, score, review} = req.body
+        const {user_id, ...updateData} = req.body
         const UReview = await Review.findOneAndUpdate(
-            {user_id: user_id, game_id: game_id}, 
-            {score, review}, 
+            { user_id, game_id }, 
+            updateData, 
             { new: true, upsert : true })
         if (!UReview) return res.status(404).json({ error: "Reseña no encontrada" })
             return res.json(UReview)
-        res.status(201).json(UReview)
     } catch (err) {
         res.status(400).json({ error: err.message })
     }
